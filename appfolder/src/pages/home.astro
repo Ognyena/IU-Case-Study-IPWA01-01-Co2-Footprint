@@ -1,0 +1,136 @@
+---
+//Importiert das Layout => sorgt für Globale Navigation + Footer
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!--CO2 Tabelle der Hauptseite -->
+<Layout>
+        <div class="container-fluid text-wrap">
+            <section>
+              <p class="fs-2">{t('body.caption1')}</p>
+              <p class="fs-4">{t('body.caption2')}</p>
+            </section>
+          </div>
+        
+        <!--Tabelle-->
+          <div class="table-responsive container-fluid">
+            <table id="myTable" class="table table-bordered table-sortable">
+              <thead class="table-dark">
+                <tr>
+                  <th>
+                      <!--Filter mit Drop Down-->
+                      <select id="filter1">
+                        <option value="all1">{t('table.all')}</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                      </select>
+                    <!--Sortierbutton-->
+                    <button id="button1" class="arrow-icon"></button>
+                  </th>
+                  <th>
+                      <select id="filter2">
+                        <option value="all2">{t('table.all')}</option>
+                        <option value="companies">{t('table.company')}</option>
+                        <option value="countries">{t('table.country')}</option>
+                      </select>  
+                    <button id="button2" class="arrow-icon"></button>
+                  </th>
+                  <th>
+                      <select id="filter3">
+                        <option value="co2-emissions">{t('table.emission')}</option>
+                      </select>
+                    <button id="button3" class="arrow-icon"></button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--Werte der Tabelle der Länder für das Jahr 2022 -->
+                <tr><td>2022</td><td class="countries">{t('country.qatar')}</td><td>40.5</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.uae')}</td><td>25.1</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.saudiarabia')}</td><td>17.9</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.india')}</td><td>16.8</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.australia')}</td><td>15.8</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.usa')}</td><td>13.5</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.canada')}</td><td>13.3</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.china')}</td><td>12.2</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.russia')}</td><td>11.2</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.japan')}</td><td>10.6</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.mexico')}</td><td>09.1</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.germany')}</td><td>08.9</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.poland')}</td><td>08.7</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.netherlands')}</td><td>08.6</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.belgium')}</td><td>08.5</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.malaysia')}</td><td>07.9</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.egypt')}</td><td>07.3</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.southafrica')}</td><td>07.1</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.norway')}</td><td>06.5</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.finland')}</td><td>06.3</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.sweden')}</td><td>06.1</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.argentinia')}</td><td>04.1</td></tr>
+                <tr><td>2022</td><td class="countries">{t('country.iceland')}</td><td>02.8</td></tr>
+                 <!--Werte der Tabelle der Länder für das Jahr 2021 -->
+                <tr><td>2021</td><td class="countries">{t('country.qatar')}</td><td>35.5</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.uae')}</td><td>23.1</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.saudiarabia')}</td><td>17.7</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.india')}</td><td>15.8</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.australia')}</td><td>14.8</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.usa')}</td><td>12.5</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.canada')}</td><td>12.3</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.china')}</td><td>11.2</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.russia')}</td><td>10.2</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.japan')}</td><td>09.6</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.mexico')}</td><td>08.1</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.germany')}</td><td>07.9</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.poland')}</td><td>07.7</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.netherlands')}</td><td>07.6</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.belgium')}</td><td>07.5</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.malaysia')}</td><td>06.9</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.egypt')}</td><td>06.3</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.southafrica')}</td><td>06.1</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.norway')}</td><td>05.5</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.finland')}</td><td>05.3</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.sweden')}</td><td>05.1</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.argentinia')}</td><td>03.1</td></tr>
+                <tr><td>2021</td><td class="countries">{t('country.iceland')}</td><td>01.8</td></tr>
+                <!--Werte der Tabelle der Unternehmen für das Jahr 2022 -->
+                <tr><td>2022</td><td class="companies">{t('company.iranoil')}</td><td>65.8</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.shell')}</td><td>60.5</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.total')}</td><td>55.1</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.bp')}</td><td>50.9</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.gazprom')}</td><td>40.8</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.chevron')}</td><td>35.8</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.nestle')}</td><td>20.5</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.boeing')}</td><td>15.3</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.lufthansa')}</td><td>14.2</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.rwe')}</td><td>12.2</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.eon')}</td><td>10.2</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.vattenfall')}</td><td>08.6</td></tr>
+                <tr><td>2022</td><td class="companies">{t('company.basf')}</td><td>05.6</td></tr>
+                <!--Werte der Tabelle der Unternehmen für das Jahr 2022 -->
+                <tr><td>2021</td><td class="companies">{t('company.iranoil')}</td><td>60.8</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.shell')}</td><td>55.5</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.total')}</td><td>50.1</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.bp')}</td><td>45.9</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.gazprom')}</td><td>35.8</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.chevron')}</td><td>30.8</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.nestle')}</td><td>19.5</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.boeing')}</td><td>14.3</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.lufthansa')}</td><td>13.2</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.rwe')}</td><td>11.2</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.eon')}</td><td>09.2</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.vattenfall')}</td><td>07.6</td></tr>
+                <tr><td>2021</td><td class="companies">{t('company.basf')}</td><td>04.6</td></tr>
+                
+                <script> import "../scripts/maintable.js"; </script>
+              </tbody>
+            </table>
+          </div>   
+        
+</Layout>
+
+
+

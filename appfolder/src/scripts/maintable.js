@@ -1,4 +1,4 @@
-// Separate Javascript File zur besseren Übersichtlichkeit erstellt
+// Separate Javascript File für die Funktionen der Tabelle
 
 
 // **Tabelle sortieren:**
@@ -116,38 +116,6 @@ filterYear.addEventListener('change', function() {
 
 
 
-
-
-
-// **Eingabefelder gegen XSS Attacken absichern:**
-// 1. Escape-Funktion, um Benutzereingaben sicher anzuzeigen
-function escapeHTML(input) {
-    const searchInput = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;',
-    };
-    return input.replace(/[&<>"']/g, match => searchInput[match]);
-}
-
-// 2. Validierung und Escapen von Benutzereingaben
-function validateSearch() {
-    const searchInput = document.getElementById('searchInput').value;
-    const sanitizedInput = escapeHTML(searchInput);
-
-    if (searchInput !== sanitizedInput) {
-
-        document.getElementById('errorText').textContent = 'Invalid! Please do not use special characters.';
-        return false; // Suche wird nicht abgeschickt
-
-    } else {
-        
-        // Suche wird abgeschickt, Eingabe ist sicher
-        return true;
-    }
-}
 
 
 

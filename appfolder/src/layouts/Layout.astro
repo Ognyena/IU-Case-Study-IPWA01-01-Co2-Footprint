@@ -1,0 +1,37 @@
+---
+import "../globalassets/global.css"; //importiert Globales CSS
+import "../globalassets/maintable.css"; //CSS der Tabelle wird importiert
+import Header from "../components/Header.astro"; //importiert globale Navigation (Header)
+import Footer from "../components/Footer.astro"; //importiert globalen Footer
+
+---
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content=
+                "default-src 'self';
+                style-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css 'unsafe-inline';
+                script-src-elem 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js 'unsafe-inline';
+                img-src 'self' data: image/svg+xml;">
+        
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <title>Global CO2 Tracker</title>
+        <!--Framework "Bootstrap" eingebunden, für mehr Designoptionen-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>        
+    </head>
+    
+    <body> 
+       <Header />
+            <main>
+                <slot />
+            </main>
+	    <Footer /> 
+
+    </body>
+  
+</html>

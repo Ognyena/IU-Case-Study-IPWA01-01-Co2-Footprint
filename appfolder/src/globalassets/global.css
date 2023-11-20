@@ -1,0 +1,136 @@
+
+/*Globales Styling*/
+
+/*Anpassung des Bodys; Padding-inline-start/end verwendet (Logical Properties), damit es auch bei 'rtl' richtig dargestellt wird*/
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #8abfd2e0;
+    padding-top: 0px;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+
+   
+}
+
+
+h1 {
+    color:#0e4569;
+    padding-top: 6.0rem;
+}
+
+
+
+/* Styling des Headers*/
+.bg-body-tertiary {
+    background-color: #0e4569 !important;
+}
+
+header nav div a.navbar-brand { 
+    --bs-navbar-brand-color: #fff; 
+    --bs-navbar-brand-hover-color: #fff; 
+    font-size: 25px; 
+}
+
+
+
+.nav-link.active { 
+    color: #fff !important; 
+}
+
+.nav-link { 
+    color: #fff; 
+    font-size: 20px; 
+    --bs-navbar-active-color: #5ad0f8; 
+    --bs-navbar-hover-color: #5ad0f8; 
+}
+
+.nav-link:hover { 
+    color: #5ad0f8; 
+}
+
+.nav-item { 
+    padding: 15px; 
+}
+
+.navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); 
+}
+
+.navbar-toggler { 
+    border: 2px solid; 
+    color: #fff; 
+}
+
+.btn-outline-light { 
+    border: 2px solid; 
+    --bs-btn-hover-color: #0e4569;
+}
+
+.dropdown-menu { 
+    background-color: #0e4569; 
+    text-align: start; /* damit wird das Dropdown Menü auch bei rtl auf der richtigen Seite angezeigt.*/
+    --bs-dropdown-link-color: #fff; 
+    --bs-dropdown-link-hover-color: #0e4569; 
+    --bs-dropdown-border-color: #fff; 
+    --bs-dropdown-divider-bg: #fff; 
+}
+
+
+.btn-outline-success { 
+    --bs-btn-color: #fff; 
+    --bs-btn-border-color: #fff; 
+    --bs-btn-hover-color: #fff; 
+    --bs-btn-hover-bg: #5ad0f8; 
+    --bs-btn-hover-border-color: #5ad0f8; 
+    --bs-btn-active-bg: #5ad0f8; 
+    --bs-btn-active-border-color: #5ad0f8; 
+    --bs-btn-disabled-color: #5ad0f8; 
+    --bs-btn-disabled-border-color: #5ad0f8; }
+
+/** Media Queries für den Header, für kleinere Auflösungen */
+@media screen and (max-width: 400px) {    
+    .nav-link { font-size: 15px; }
+    .dropdown-item { font-size: 15px; }
+    header nav div a.navbar-brand { display: none; }
+}
+
+
+
+/*Styling des Footers*/
+
+    footer {
+        text-align: center; 
+        background-color: #0e4569;
+    }
+
+    .card.text-bg-primary { 
+        display: list-item !important; 
+        background-color: #0e4569 !important;
+    }
+
+    footer div a.nav-item { 
+        text-decoration: none; 
+        color: #fff; 
+        font-size: 20px; 
+        padding-top: 0%; 
+        padding-bottom: 0px;
+        padding-inline-end: 20px;
+    } 
+
+    footer div.card-header { 
+        font-size: 15px;
+    }
+
+    /** Media Queries für den Footer, für kleinere Auflösungen */
+    @media screen and (max-width: 400px) {
+        footer { overflow:scroll; }
+        footer div a.nav-item { font-size: small; }
+        footer div.card-header { font-size: smaller; }
+    }
+
+    @media screen and (max-width: 250px) {
+        footer { display:none; }
+    }

@@ -1,0 +1,19 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<!--Footer wird Global angezeigt -->
+<footer>
+    <div class="card text-bg-primary rounded-0 text-nowrap">
+      <li class="d-inline"><a class="nav-item" href={`/${lang}/privacypolicy`}>{t('footer.privacy')}</a></li>
+      <li class="d-inline"><a class="nav-item" href={`/${lang}/imprint`}>{t('footer.imprint')}</a></li>
+      <li class="d-inline"><a class="nav-item" href={`/${lang}/gtc`}>{t('footer.gtc')}</a></li>
+      <div class="card-header">{t('footer.copyright')}</div> 
+    </div>  
+  </footer>
+
+

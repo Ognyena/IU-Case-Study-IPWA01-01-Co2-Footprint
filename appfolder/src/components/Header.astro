@@ -1,0 +1,64 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<!--Header wird Global angezeigt => Globale Navigation -->
+<header>
+      <!--Navbar von Bootstraps importiert-->
+      <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+          <div class="container-fluid"> 
+            <!--Logo sowie Namen in Navbar eingebunden-->
+            <img src="/logo.jpg" alt="Logo" width="60" height="30" class="d-inline-block align-text-top"></img>
+            <a class="navbar-brand" href={`/${lang}/home`}>Global CO₂ Tracker</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav navbar-expand-sm mx-auto navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item"><a class="nav-link" href={`/${lang}/home`}>{t('nav.home')}</a></li>
+                  <!--Navbar mit Dropdown Menü für einzelne Unterpunkte-->
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/about" role="button" data-bs-toggle="dropdown" aria-expanded="false">{t('nav.about')}</a>
+                    <ul class="dropdown-menu"> 
+                      <li><a class="dropdown-item" href={`/${lang}/news`}>{t('nav.news')}</a></li>
+                      <li><a class="dropdown-item" href={`/${lang}/blog`}>{t('nav.blog')}</a></li>
+                      <li><a class="dropdown-item" href={`/${lang}/faq`}>{t('nav.faq')}</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="https://www.facebook.com/GcO2T">Facebook</a></li>
+                      <li><a class="dropdown-item" href="https://www.instagram.com/GcO2T">Instagram</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/data" role="button" data-bs-toggle="dropdown" aria-expanded="false">{t('nav.data')}</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href={`/${lang}/climatechange`}>{t('nav.climate')}</a></li>
+                      <li><a class="dropdown-item" href={`/${lang}/carbonemissions`}>{t('nav.carbon')}</a></li>
+                      <li><a class="dropdown-item" href={`/${lang}/effects`}>{t('nav.effects')}</a></li>
+                      <li><a class="dropdown-item" href={`/${lang}/statistics`}>{t('nav.statistics')}</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/language" role="button" data-bs-toggle="dropdown">{t('nav.lang')}</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/en/home">English</a></li>
+                      <li><a class="dropdown-item" href="/de/home">Deutsch</a></li>
+                      <li><a class="dropdown-item" href="/fr/home">Français</a></li>
+                      <li><a class="dropdown-item" href="/es/home">Español</a></li>
+                      <li><a class="dropdown-item" href="/ru/home">Русский</a></li>
+                      <li><a class="dropdown-item" href="/he/home">עברית</a></li>
+                      <li><a class="dropdown-item" href="/ar/home">عربي</a></li>
+                    </ul>
+                  </li>
+                  </li>
+                </ul>
+                <!--Suchzeile-->
+                <form class="form d-flex">
+                  <input class="form-control" type="search" name="search" id="search" placeholder={t('nav.plholder')} ></input> 
+                  <button class="btn btn-outline-success" type="submit">{t('nav.searchbutton')}</button>
+                </form>
+              </div>
+          </div>
+      </nav>  
+</header>
+
+
+

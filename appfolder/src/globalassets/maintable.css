@@ -1,0 +1,73 @@
+
+
+  /* Styling der Tabelle = Startseite*/
+  main div.table-responsive.container-fluid {
+    overflow-x: scroll; 
+    width: 80%;
+  }
+
+  p {
+    color:#0e4569;
+  }
+
+  p.fs-2 {
+    padding-top: 6.0rem;
+  }
+
+  .table-dark {
+    --bs-table-bg: #0e4569;
+    --bs-table-border-color: #5ad0f8;  
+    text-align: center;
+  }
+
+  .table {
+    --bs-table-color: #0e4569;
+    text-align: center;
+    border: 8px double #0e4569;
+  }
+
+  .arrow-icon {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ffffff" class="bi bi-arrow-down-up" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/></svg>');
+    width: 20px;
+    height: 20px;
+    display: inline-block; 
+    vertical-align: middle;
+    background-color: #0e4569;
+    border-color: #fff;
+    border-radius: 3px;
+  }
+
+  select#filter1 {
+    width: 80px;
+    border-color: #fff;
+    color:#fff;
+    background-color: #0e4569;
+    vertical-align: middle;
+    border-radius: 5px;
+    
+  }
+
+  select#filter2{
+    width: 140px;
+    border-color: #fff;
+    color:#fff;
+    background-color: #0e4569;
+    vertical-align: middle;
+    border-radius: 5px;
+  }
+
+  select#filter3 {
+    width: 155px;
+    border-color: #fff;
+    color:#fff;
+    background-color: #0e4569;
+    vertical-align: middle;
+    border-radius: 5px;
+  }   
+
+  /** Media Queries für den Content Bereich, für kleinere Auflösungen */
+  @media screen and (max-width: 250px) {
+    main div section {overflow:scroll;}
+    .form-control.me-2 { display: none; }
+    .btn.btn-outline-success { display: none; }
+}

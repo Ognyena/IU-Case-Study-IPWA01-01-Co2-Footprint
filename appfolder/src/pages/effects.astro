@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout>
+    <h1>{t('effects.caption')}</h1>
+</Layout>
